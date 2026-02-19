@@ -1,145 +1,85 @@
 import "./App.css";
+import { useState } from "react";
 
-const userName = "gibran";
-const userId = "fufufafa";
+import ChallengerCard from "./components/ChallengerCard";
+import StudyRoadmap from "./components/StudyRoadmap";
+import StatsCards from "./components/StatsCards";
+import Badges from "./components/Badges";
+import Leaderboard from "./components/Leaderboard";
+import FooterDW from "./components/FooterDW";
+import { participants } from "./data/participants";
+import { meetWeek1 } from "./data/meet-week1";
+import { meetWeek2 } from "./data/meet-week2";
+import { meetWeek3 } from "./data/meet-week3";
+import { meetWeek4 } from "./data/meet-week4";
+import { meetWeek5 } from "./data/meet-week5";
+import { meetWeek6 } from "./data/meet-week6";
+import { scoreEngine } from "./utils/scoreEngine";
 
-const ROADMAP_DATA = [
-  { nama : "HTML", logo : "/logo_html.png", status : "done" },
-  { nama : "CSS", logo : "/logo_css.png", status : "active" },
-  { nama : "CSS", logo : "/logo_css.png", status : "done" },
-  { nama : "JS", logo : "/logo_js.png", status : "locked" },
-  { nama : "JS", logo : "/logo_js.png", status : "locked" },
-  { nama : "JS", logo : "/logo_js.png", status : "locked" },
-];
+export default function App() {
+  const [season, setSeason] = useState(1);
 
-const streak = 0;
-const point = 0;
-const rank = "Practitioner I";
+  // 🔥 pilih ID aktif disini
+  const activeId = window.location.hash.replace("#", "");
 
-const Badges = [
-  { title : "Web Starter" },
-  { title : "Consistency" },
-  { title : "Perfect Attendance" },
-  { title : "Active Learner" },
-  { title : "Archiever" },
-  { title : "High Performer" },
-];
+  const user = scoreEngine(activeId, participants, [
+    meetWeek1,
+    meetWeek2,
+    meetWeek3,
+    meetWeek4,
+    meetWeek5,
+    meetWeek6,
+  ]);
 
-const Leaderboard = [
-  { rank : 1, nama : "prabowo", skor : 1 },
-  { rank : 2, nama : "jokowi", skor : 0 },
-  { rank : 3, nama : "gibran", skor : 2.3 },
-  { rank : 4, nama : "bahlil", skor : 2.7 },
-  { rank : 5, nama : "trump", skor : -1 },
-];
+  if (!user) return <h2>User not found</h2>;
 
-function Roadmap() {
   return (
-    <div className="card">
-      <div className="roadmap-top">
-        <h3>📘 Study RoadMap</h3>
-        <div className="season">
-          <span className="active">Season 1</span>
-          <span>Season 2</span>
-        </div>
+    <div className="main-container">
+      <div className="svg-container">
+        <img src="/assets/bg-logo.svg" alt="Logo" />
       </div>
 
-      <div className="roadmap-track">
-        {ROADMAP_DATA.map((item, i) => (
-          <div key={i} className="roadmap-item">
-            <div className={`roadmap-circle ${item.status}`}>
-              <img src={item.logo} alt={item.nama} className="roadmap-icon" />
-            </div>
-            <p>{item.nama}</p>
-          </div>
-        ))}
+      <div className="main-content">
+        <div className="content-container">
+          <ChallengerCard
+            fotoProfile={user.avatarUrl}
+            username={user.name}
+            id={user.id}
+            dwPoint={user.totalDwPoint}
+          />
+
+          <StudyRoadmap
+            activeSeason={season}
+            onChangeSeason={setSeason}
+            attendance={user.attendance}
+          />
+
+          <StatsCards
+            streaks={user.streak}
+            dwPoint={user.totalDwPoint}
+            poin={user.totalDwPoint}
+          />
+
+          <Badges
+            attendance={user.attendance}
+            dailyContribution={user.dailyContribution}
+            dwPoint={user.totalDwPoint}
+          />
+          <Leaderboard
+            participants={participants}
+            meetings={[
+              meetWeek1,
+              meetWeek2,
+              meetWeek3,
+              meetWeek4,
+              meetWeek5,
+              meetWeek6,
+            ]}
+          />
+
+          <FooterDW />
+        </div>
       </div>
     </div>
   );
 }
-
-function App() {
-  return (
-    <div className="app-container">
-
-      <div className="card">
-        <div className="profile-body">
-          <img src="/profil.jpg" alt="profile" className="profile-photo" />
-
-          <div className="profile-info">
-            <h2>gibrann</h2>
-            <p>@{userId}</p>
-          </div>
-
-          <div className="rank-circle">
-            <img src="/logo_practitioner.png" alt="rank" className="rank-logo" />
-          </div>
-        </div>
-      </div>
-
-      <Roadmap />
-
-      <div className="stats-row">
-        <div className="stat-card">
-          <div className="stat-icon">
-            <img src="/logo_streaks.png" alt="streak" />
-          </div>
-          <div className="stat-text">
-            <p>Streaks</p>
-            <h2>{streak}</h2>
-          </div>
-        </div>
-
-        <div className="stat-card">
-          <div className="stat-icon">
-            <img src="/logo_practitioner.png" alt="rank" />
-          </div>
-          <div className="stat-text">
-            <p>Rank</p>
-            <h2>{rank}</h2>
-          </div>
-        </div>
-
-        <div className="stat-card">
-          <div className="stat-icon">
-            <img src="/logo_dw.png" alt="point" />
-          </div>
-          <div className="stat-text">
-            <p>DW Point</p>
-            <h2>{point}</h2>
-          </div>
-        </div>
-      </div>
-
-      <div className="card">
-        <h3>Badges</h3>
-        <div className="badges-grid">
-          {Badges.map((b, i) => (
-            <div key={i} className={`badge-pill ${i === 0 ? "active" : ""}`}>
-              {b.title}
-            </div>
-          ))}
-        </div>
-      </div>
-
-      <div className="card">
-        <h3>🏆 Leaderboard Top 5</h3>
-        {Leaderboard.map((u) => (
-          <div key={u.rank} className="leader-item">
-            <div className="leader-rank">{u.rank}</div>
-            <img src="/profile.jpg" alt="user" className="leader-photo" />
-            <div className="leader-name">{u.nama}</div>
-            <div className="leader-score">{u.skor}</div>
-          </div>
-        ))}
-      </div>
-
-      <footer className="app-footer">
-        Dimensi Web Learning Arena
-      </footer>
-
-    </div>
-  );
-}
-
-export default App;
