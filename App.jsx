@@ -36,12 +36,14 @@ export default function App() {
   return (
     <div className="main-container">
       <div className="svg-container">
+        {/* path sudah diperbaiki ke public/assets */}
         <img src="/assets/bg-logo.svg" alt="Logo" />
       </div>
 
       <div className="main-content">
         <div className="content-container">
           <ChallengerCard
+            // pastikan setiap user.avatarUrl di participants menunjuk ke /assets/profile-X.png
             fotoProfile={user.avatarUrl}
             username={user.name}
             id={user.id}
@@ -65,6 +67,7 @@ export default function App() {
             dailyContribution={user.dailyContribution}
             dwPoint={user.totalDwPoint}
           />
+
           <Leaderboard
             participants={participants}
             meetings={[
