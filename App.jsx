@@ -8,12 +8,6 @@ import Badges from "./components/Badges";
 import Leaderboard from "./components/Leaderboard";
 import FooterDW from "./components/FooterDW";
 import { participants } from "./data/participants";
-import { meetWeek1 } from "./data/meet-week1";
-import { meetWeek2 } from "./data/meet-week2";
-import { meetWeek3 } from "./data/meet-week3";
-import { meetWeek4 } from "./data/meet-week4";
-import { meetWeek5 } from "./data/meet-week5";
-import { meetWeek6 } from "./data/meet-week6";
 import { scoreEngine } from "./utils/scoreEngine";
 
 export default function App() {
@@ -22,14 +16,7 @@ export default function App() {
   // 🔥 pilih ID aktif disini
   const activeId = window.location.hash.replace("#", "");
 
-  const user = scoreEngine(activeId, participants, [
-    meetWeek1,
-    meetWeek2,
-    meetWeek3,
-    meetWeek4,
-    meetWeek5,
-    meetWeek6,
-  ]);
+  const user = scoreEngine(activeId, participants, []);
 
   if (!user) return <h2>User not found</h2>;
 
@@ -65,17 +52,7 @@ export default function App() {
             dailyContribution={user.dailyContribution}
             dwPoint={user.totalDwPoint}
           />
-          <Leaderboard
-            participants={participants}
-            meetings={[
-              meetWeek1,
-              meetWeek2,
-              meetWeek3,
-              meetWeek4,
-              meetWeek5,
-              meetWeek6,
-            ]}
-          />
+          <Leaderboard participants={participants} meetings={[]} />
 
           <FooterDW />
         </div>

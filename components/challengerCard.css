@@ -58,8 +58,8 @@
 ============================== */
 
 .rank {
-  width: 70px;
-  height: 70px;
+  width: 60px;
+  height: 60px;
   position: relative;
   z-index: 2;
   animation: rankFloat 3s ease-in-out infinite;
