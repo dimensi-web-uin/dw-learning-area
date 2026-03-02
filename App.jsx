@@ -11,6 +11,8 @@ import { participants } from "./data/participants";
 import { meetweek1 } from "./data/meet-week1";
 import { scoreEngine } from "./utils/scoreEngine";
 
+import { meetweek1 } from "./data/meet-week1";
+
 export default function App() {
   const [season, setSeason] = useState(1);
 
