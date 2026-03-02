@@ -8,10 +8,8 @@ import Badges from "./components/Badges";
 import Leaderboard from "./components/Leaderboard";
 import FooterDW from "./components/FooterDW";
 import { participants } from "./data/participants";
-import { scoreEngine } from "./utils/scoreEngine";
 import { meetweek1 } from "./data/meet-week1";
-
-import { meetweek1 } from "./data/meet-week-1";
+import { scoreEngine } from "./utils/scoreEngine";
 
 export default function App() {
   const [season, setSeason] = useState(1);
