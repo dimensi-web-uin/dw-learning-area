@@ -18,7 +18,7 @@ export default function App() {
   const activeId = window.location.hash.replace("#", "");
 
   const user = scoreEngine(activeId, participants, [
-    meet-week1,
+    meetweek1,
   ]);
 
   if (!user) return <h2>User not found</h2>;
