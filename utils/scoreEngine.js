@@ -25,7 +25,7 @@ export function scoreEngine(userId, participants, meetings) {
 
     const attendancePoint = attended ? 15 + Math.min(streak - 1, 7) : 0;
 
-    const quizPoint = data.quizCorrect;
+    const quizPoint = Math.max(data.quizCorrect, 0);
     const feedbackPoint = data.feedback ? 5 : 0;
     const activityPoint = Math.min(data.activityCount, 2) * 7;
 
