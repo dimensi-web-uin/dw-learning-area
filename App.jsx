@@ -9,6 +9,7 @@ import Leaderboard from "./components/Leaderboard";
 import FooterDW from "./components/FooterDW";
 import { participants } from "./data/participants";
 import { meetweek1 } from "./data/meet-week1";
+import { meetweek2 } from "./data/meet-week2";
 import { scoreEngine } from "./utils/scoreEngine";
 
 export default function App() {
@@ -18,7 +19,7 @@ export default function App() {
   const activeId = window.location.hash.replace("#", "");
 
   const user = scoreEngine(activeId, participants, [
-    meetweek1,
+    meetweek1, meetweek2,
   ]);
 
   if (!user) return <h2>User not found</h2>;
