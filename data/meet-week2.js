@@ -1,6 +1,15 @@
 export const meetweek2 = [
-    { id: "DW-151", quizCorrect: 10, feedback: true, activityCount: 1 },
-    { id: "DW-364", quizCorrect: -1, feedback: false, activityCount: 0 },
-    { id: "DW-852", quizCorrect: 15, feedback: true, activityCount: 2 },
-    { id: "DW-357", quizCorrect: -1, feedback: false, activityCount: 0 },
+    { id: "DW-151", quizCorrect: 13, feedback: true, activityCount: 1 }, //Salwa
+    { id: "DW-364", quizCorrect: 15, feedback: true, activityCount: 0 }, //Saeful
+    { id: "DW-852", quizCorrect: -1, feedback: false, activityCount: 0 }, //Yelsa
+    { id: "DW-357", quizCorrect: 10, feedback: true, activityCount: 0 }, //Naufal Faishal
+    { id: "DW-090", quizCorrect: 14, feedback: true, activityCount: 1 }, //Ahsan
+    { id: "DW-136", quizCorrect: 13, feedback: true, activityCount: 0 }, //Asyraf
+    { id: "DW-210", quizCorrect: 13, feedback: true, activityCount: 0 }, //Andini
+    { id: "DW-097", quizCorrect: 14, feedback: true, activityCount: 1 }, //Tubagus
+    { id: "DW-999", quizCorrect: -1, feedback: false, activityCount: 0 }, //Irsyad
+    { id: "DW-027", quizCorrect: -1, feedback: false, activityCount: 0 }, //Taswa
+    { id: "DW-999", quizCorrect: -1, feedback: false, activityCount: 0 }, //Satrio
+    { id: "DW-666", quizCorrect: -1, feedback: false, activityCount: 0 }, //Keanu
+    { id: "DW-016", quizCorrect: -1, feedback: false, activityCount: 0 }, //Luthfi
 ];
