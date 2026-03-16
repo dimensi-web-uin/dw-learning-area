@@ -56,7 +56,7 @@ export default function App() {
             dailyContribution={user.dailyContribution}
             dwPoint={user.totalDwPoint}
           />
-          <Leaderboard participants={participants} meetings={[meetweek1, meetweek2]} />
+          <Leaderboard participants={participants} meetings={[meetweek1, meetweek2, meetweek3]} />
 
           <FooterDW />
         </div>
