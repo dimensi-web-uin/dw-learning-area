@@ -11,7 +11,7 @@ import { participants } from "./data/participants";
 import { meetweek1 } from "./data/meet-week1";
 import { meetweek2 } from "./data/meet-week2";
 import { meetweek3 } from "./data/meet-week3";
-import { meetweek3 } from "./data/meet-week4";
+import { meetweek4 } from "./data/meet-week4";
 import { scoreEngine } from "./utils/scoreEngine";
 
 export default function App() {
