@@ -5,7 +5,7 @@ import ChallengerCard from "./components/ChallengerCard";
 import StudyRoadmap from "./components/StudyRoadmap";
 import StatsCards from "./components/StatsCards";
 import Badges from "./components/Badges";
-import Leaderboard from "./components/Leaderboard";
+import Leaderboard from "./components/Leaderboard"; 
 import FooterDW from "./components/FooterDW";
 import { participants } from "./data/participants";
 import { meetweek1 } from "./data/meet-week1";
