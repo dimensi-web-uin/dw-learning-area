@@ -51,7 +51,7 @@ export default function App() {
 
           <StatsCards
             streaks={user.streak}
-            dwPoint={user.totalDwPoint}
+            dwPoint={user.totalDwPoint} 
             poin={user.totalDwPoint}
           />
 
