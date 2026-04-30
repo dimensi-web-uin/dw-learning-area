@@ -13,6 +13,7 @@ import { meetweek2 } from "./data/meet-week2";
 import { meetweek3 } from "./data/meet-week3";
 import { meetweek4 } from "./data/meet-week4";
 import { meetweek5 } from "./data/meet-week5";
+import { meetweek5 } from "./data/meet-week6";
 import { scoreEngine } from "./utils/scoreEngine";
 
 export default function App() {
@@ -22,7 +23,7 @@ export default function App() {
   const activeId = window.location.hash.replace("#", "");
 
   const user = scoreEngine(activeId, participants, [
-    meetweek1, meetweek2, meetweek3, meetweek4, meetweek5,
+    meetweek1, meetweek2, meetweek3, meetweek4, meetweek5, meetweek6,
   ]);
 
   if (!user) return <h2>User not found</h2>;
@@ -59,7 +60,7 @@ export default function App() {
             dailyContribution={user.dailyContribution}
             dwPoint={user.totalDwPoint}
           />
-          <Leaderboard participants={participants} meetings={[meetweek1, meetweek2, meetweek3, meetweek4, meetweek5]} />
+          <Leaderboard participants={participants} meetings={[meetweek1, meetweek2, meetweek3, meetweek4, meetweek5, meetweek6]} />
 
           <FooterDW />
         </div>
