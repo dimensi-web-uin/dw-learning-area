@@ -1,14 +1,14 @@
 export default function StatsCards({ streaks = 0, dwPoint = 0 }) {
   const getRank = (dwPoint) => {
-    if (dwPoint <= 69) return "Explorer I";
-    if (dwPoint <= 139) return "Explorer II";
-    if (dwPoint <= 199) return "Explorer III";
-    if (dwPoint <= 266) return "Learner I";
-    if (dwPoint <= 333) return "Learner II";
-    if (dwPoint <= 399) return "Learner III";
-    if (dwPoint <= 466) return "Practitioner I";
-    if (dwPoint <= 533) return "Practitioner II";
-    if (dwPoint <= 599) return "Practitioner III";
+    if (dwPoint <= 60) return "Explorer I";
+    if (dwPoint <= 120) return "Explorer II";
+    if (dwPoint <= 180) return "Explorer III";
+    if (dwPoint <= 240) return "Learner I";
+    if (dwPoint <= 300) return "Learner II";
+    if (dwPoint <= 360) return "Learner III";
+    if (dwPoint <= 420) return "Practitioner I";
+    if (dwPoint <= 480) return "Practitioner II";
+    if (dwPoint <= 540) return "Practitioner III";
     return "Achiever";
   };
 
