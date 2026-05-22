@@ -2,9 +2,9 @@ import "./challengerCard.css";
 
 export default function ChallengerCard({ fotoProfile, username, id, dwPoint }) {
   const getRank = (point) => {
-    if (point <= 199) return "Explorer";
-    if (point <= 399) return "Learner";
-    if (point <= 599) return "Practitioner";
+    if (point <= 180) return "Explorer";
+    if (point <= 360) return "Learner";
+    if (point <= 540) return "Practitioner";
     return "Achiever";
   };
 
