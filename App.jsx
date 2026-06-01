@@ -17,7 +17,7 @@ import { meetweek6 } from "./data/meet-week6";
 import { meetweek7 } from "./data/meet-week7";
 import { meetweek8 } from "./data/meet-week8";
 import { meetweek9 } from "./data/meet-week9";
-import { meetweek9 } from "./data/meet-week10";
+import { meetweek10 } from "./data/meet-week10";
 import { scoreEngine } from "./utils/scoreEngine";
 
 export default function App() {
