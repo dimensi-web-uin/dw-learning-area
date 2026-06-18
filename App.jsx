@@ -5,7 +5,7 @@ import ChallengerCard from "./components/ChallengerCard";
 import StudyRoadmap from "./components/StudyRoadmap";
 import StatsCards from "./components/StatsCards";
 import Badges from "./components/Badges";
-import Leaderboard from "./components/Leaderboard"; 
+import Leaderboard from "./components/Leaderboard";
 import FooterDW from "./components/FooterDW";
 import { participants } from "./data/participants";
 import { meetweek1 } from "./data/meet-week1";
@@ -18,6 +18,9 @@ import { meetweek7 } from "./data/meet-week7";
 import { meetweek8 } from "./data/meet-week8";
 import { meetweek9 } from "./data/meet-week9";
 import { meetweek10 } from "./data/meet-week10";
+import { meetweek11 } from "./data/meet-week11";
+import { meetweek12 } from "./data/meet-week12";
+import { meetweek13 } from "./data/meet-week13";
 import { scoreEngine } from "./utils/scoreEngine";
 
 export default function App() {
@@ -27,7 +30,19 @@ export default function App() {
   const activeId = window.location.hash.replace("#", "");
 
   const user = scoreEngine(activeId, participants, [
-    meetweek1, meetweek2, meetweek3, meetweek4, meetweek5, meetweek6, meetweek7, meetweek8, meetweek9, meetweek10,
+    meetweek1,
+    meetweek2,
+    meetweek3,
+    meetweek4,
+    meetweek5,
+    meetweek6,
+    meetweek7,
+    meetweek8,
+    meetweek9,
+    meetweek10,
+    meetweek11,
+    meetweek12,
+    meetweek13,
   ]);
 
   if (!user) return <h2>User not found</h2>;
@@ -55,7 +70,7 @@ export default function App() {
 
           <StatsCards
             streaks={user.streak}
-            dwPoint={user.totalDwPoint} 
+            dwPoint={user.totalDwPoint}
             poin={user.totalDwPoint}
           />
 
@@ -64,7 +79,24 @@ export default function App() {
             dailyContribution={user.dailyContribution}
             dwPoint={user.totalDwPoint}
           />
-          <Leaderboard participants={participants} meetings={[meetweek1, meetweek2, meetweek3, meetweek4, meetweek5, meetweek6, meetweek7, meetweek8, meetweek9, meetweek10]} />
+          <Leaderboard
+            participants={participants}
+            meetings={[
+              meetweek1,
+              meetweek2,
+              meetweek3,
+              meetweek4,
+              meetweek5,
+              meetweek6,
+              meetweek7,
+              meetweek8,
+              meetweek9,
+              meetweek10,
+              meetweek11,
+              meetweek12,
+              meetweek13,
+            ]}
+          />
 
           <FooterDW />
         </div>
